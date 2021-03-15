@@ -107,6 +107,36 @@ const createPixCharge = async () => {
   return { qrcode, cobranca }
 }
 
+const createWebhook = async () => {
+  const chave = process.env.CHAVE_PIX
+  const token = await getToken()
+  const accessToken = token.access_token
+
+  const certificado = fs.readFileSync('../' + process.env.GN_CERTIFICADO)
+  const data = JSON.stringify({
+    webhookUrl: 'https://api-trufashop.tuliofaria.dev/webhook/pix',
+  })
+
+  const agent = new https.Agent({
+    pfx: certificado,
+    passphrase: '',
+  })
+
+  const config = {
+    method: 'PUT',
+    url: baseUrl + '/v2/webhook/' + chave,
+    headers: {
+      Authorization: 'Bearer ' + accessToken,
+      'Content-type': 'application/json',
+    },
+    httpsAgent: agent,
+    data: data,
+  }
+  const result = await axios(config)
+  return result.data
+}
+
 module.exports = {
   createPixCharge,
+  createWebhook,
 }
