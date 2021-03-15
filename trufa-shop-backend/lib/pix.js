@@ -122,6 +122,8 @@ const createWebhook = async () => {
     passphrase: '',
   })
 
+  console.log('CHAVE', chave)
+
   const config = {
     method: 'PUT',
     url: baseUrl + '/v2/webhook/' + chave,
