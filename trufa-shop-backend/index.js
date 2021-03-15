@@ -7,10 +7,10 @@ const app = require('./app')
 const options = {
   // tls
   key: fs.readFileSync(
-    '/etc/letsencrypt/live/api-trufashop.tuliofaria.dev/fullchain.pem'
+    '/etc/letsencrypt/live/api-trufashop.tuliofaria.dev/privkey.pem'
   ),
   cert: fs.readFileSync(
-    '/etc/letsencrypt/live/api-trufashop.tuliofaria.dev/privkey.pem'
+    '/etc/letsencrypt/live/api-trufashop.tuliofaria.dev/fullchain.pem'
   ),
 
   // mtls
