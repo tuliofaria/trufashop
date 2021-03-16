@@ -97,7 +97,7 @@ const createPixCharge = async () => {
       nome: 'Tulio Faria',
     },
     valor: {
-      original: '0.07',
+      original: '0.06',
     },
     chave, // pelo app do gerencianet
     solicitacaoPagador: 'Cobrança dos serviços prestados',
