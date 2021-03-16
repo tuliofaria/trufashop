@@ -97,7 +97,7 @@ const createPixCharge = async () => {
       nome: 'Tulio Faria',
     },
     valor: {
-      original: '0.11',
+      original: '0.12',
     },
     chave, // pelo app do gerencianet
     solicitacaoPagador: 'Cobrança dos serviços prestados',
@@ -114,7 +114,7 @@ const createWebhook = async () => {
 
   const certificado = fs.readFileSync('../' + process.env.GN_CERTIFICADO)
   const data = JSON.stringify({
-    webhookUrl: 'https://api-trufashop.tuliofaria.dev/webhook/',
+    webhookUrl: 'https://api-trufashop.tuliofaria.dev/webhook/pix',
   })
 
   const agent = new https.Agent({
