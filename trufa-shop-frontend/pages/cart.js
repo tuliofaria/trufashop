@@ -29,7 +29,7 @@ const Index = ({ products }) => {
       order.items = items
       setOrderStatus('ordering')
       const result = await axios.post(
-        'http://localhost:3001/create-order',
+        process.env.NEXT_PUBLIC_API_URL + 'create-order',
         order
       )
       setQRCode(result.data.qrcode.imagemQrcode)
@@ -160,7 +160,7 @@ const Index = ({ products }) => {
                           />
                         </div>
                         <div className='my-1 flex items-center w-full h-13 pl-3 '>
-                          <label className='w-1/4'>Seu nome</label>
+                          <label className='w-1/4'>Seu CPF</label>
                           <input
                             type='text'
                             name='cpf'

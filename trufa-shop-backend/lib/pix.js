@@ -106,6 +106,7 @@ const createPixCharge = async (order) => {
     chave, // pelo app do gerencianet
     solicitacaoPagador: 'Cobrança por ' + order.items.length + ' trufas.',
   }
+  console.log(cob)
   const cobranca = await createCharge(accessToken, cob)
   const qrcode = await getLoc(accessToken, cobranca.loc.id)
   return { qrcode, cobranca }
