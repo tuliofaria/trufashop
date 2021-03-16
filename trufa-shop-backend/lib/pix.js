@@ -114,7 +114,7 @@ const createWebhook = async () => {
 
   const certificado = fs.readFileSync('../' + process.env.GN_CERTIFICADO)
   const data = JSON.stringify({
-    webhookUrl: 'https://api-trufashop.tuliofaria.dev/webhook',
+    webhookUrl: 'https://api-trufashop.tuliofaria.dev/webhook/',
   })
 
   const agent = new https.Agent({
