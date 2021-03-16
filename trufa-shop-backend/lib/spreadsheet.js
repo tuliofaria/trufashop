@@ -48,7 +48,7 @@ const updateOrder = async (orderId, status) => {
   const sheet = doc.sheetsByIndex[1]
   const maxRows = sheet.rowCount
   await sheet.loadCells('A1:A' + maxRows)
-  await sheet.loadCells('H1:H' + maxRows)
+  await sheet.loadCells('H1:I' + maxRows)
   const validIndex = [...Array(maxRows - 1).keys()]
 
   for await (const i of validIndex) {
