@@ -24,7 +24,9 @@ app.post('/webhook/pix*', async (req, res) => {
   if (!req.client.authorized) {
     return res.status(401).send('Invalid client certificate.')
   }
-  await updateOrder(pix[0].txid, 'Pago com PIX')
+  if (pix) {
+    await updateOrder(pix[0].txid, 'Pago com PIX')
+  }
 
   /*
 {
